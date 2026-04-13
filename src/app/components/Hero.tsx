@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="h-auto bg-(--bg-tertiary) w-full">
       {/*All page wrapper */}
-      <section className="flex flex-col gap-7 items-center justify-around md:w-[70vw] w-full py-16 px-6 md:py-24 mx-auto flex-1 md:flex-row">
+      <section className="flex flex-col gap-7 items-center justify-around md:w-[70vw] w-full py-16 px-6 md:py-24 mx-auto flex-1 md:flex-row border-b border-(--border)">
         {/* Левая колонка */}
         <div className="flex flex-col items-start gap-5 md:w-[30vw]">
           <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-xl font-medium">
