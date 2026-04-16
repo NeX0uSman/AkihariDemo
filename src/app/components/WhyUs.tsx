@@ -1,5 +1,10 @@
 "use client";
-import { CheckCircleIcon, ClockIcon, DesktopIcon, UserIcon } from "@phosphor-icons/react";
+import {
+  CheckCircleIcon,
+  ClockIcon,
+  DesktopIcon,
+  UserIcon,
+} from "@phosphor-icons/react";
 import React from "react";
 
 const WhyUs = () => {
@@ -55,15 +60,16 @@ const WhyUs = () => {
           </div>
         </div>
 
-        <div className="p-4 flex flex-row items-start md:flex-col md: justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) md:w-130 md:h-70">
+        <div className="p-4 hidden md:flex flex-row items-start md:flex-col md: justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) md:w-130 md:h-70">
           <div className="p-2 bg-(--pill-bg) rounded-xl">
-            <DesktopIcon size={42} weight="light"  color="#EA580C"/>
+            <DesktopIcon size={42} weight="light" color="#EA580C" />
           </div>
 
           <div className="">
             <h1 className="md:text-3xl">Nowoczesna platforma</h1>
             <p className="text-(--text-muted) text-sm md:text-xl">
-              Harmonogram jazd, materiały i postępy — wszystko w jednym miejscu online.
+              Harmonogram jazd, materiały i postępy — wszystko w jednym miejscu
+              online.
             </p>
           </div>
         </div>

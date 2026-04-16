@@ -6,7 +6,6 @@ import WhyUs from "../components/WhyUs";
 const page = () => {
   return (
     <main className="font(--font-nunito)">
-      <Header />
       <Hero />
       <WhyUs />
       <Reviews />
