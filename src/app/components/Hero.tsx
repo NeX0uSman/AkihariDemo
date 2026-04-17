@@ -10,9 +10,9 @@ const Hero = () => {
       <section className="flex flex-col gap-7 items-center justify-around lg:2-[70vw] md:w-[70vw] w-full py-16 px-6 md:py-24 mx-auto flex-1 md:flex-row">
         {/* Левая колонка */}
         <div className="flex flex-col items-start gap-5 md:w-[30vw]">
-          <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium">
+          <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2">
             <DotIcon size={21} weight="bold" color="#EA580C" />
-            <span className="text-(--pill-text)">Poznań — od 2007 roku </span>
+            <span className="text-(--pill-text) pr-3">Poznań — od 2007 roku </span>
           </div>
 
           <div className="flex flex-col gap-4">
