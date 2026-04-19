@@ -7,30 +7,30 @@ const Hero = () => {
   return (
     <section className="h-auto bg-(--bg-tertiary) w-full">
       {/*All page wrapper */}
-      <section className="flex flex-col gap-7 items-center justify-around lg:2-[70vw] md:w-[70vw] w-full py-16 px-6 md:py-24 mx-auto flex-1 md:flex-row">
+      <section className="flex flex-col gap-7 items-center justify-around lg:w-[70vw] md:w-[90vw] w-full py-16 px-6 md:py-24 mx-auto flex-1 md:flex-row">
         {/* Левая колонка */}
-        <div className="flex flex-col items-start gap-5 md:w-[30vw]">
+        <div className="flex flex-col items-start gap-5 md:w-[40vw] xl:w-[30vw]">
           <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2">
             <DotIcon size={21} weight="bold" color="#EA580C" />
             <span className="text-(--pill-text) pr-3">Poznań — od 2007 roku </span>
           </div>
 
           <div className="flex flex-col gap-4">
-            <h1 className="text-4xl md:text-4xl lg:text-4xl xl:text-4xl 2xl:text-6xl">
-              Prawo jazdy zdane<br></br>
+            <h1 className="text-4xl md:text-3xl lg:text-4xl xl:text-4xl 2xl:text-6xl">
+              Prawo jazdy zdane<br className=""></br>
               <span className="text-(--accent)"> za pierwszym razem</span>
             </h1>
-            <p className="text-(--text-secondary) md:text-(--text-muted) md:text-2xl lg:text-2xl xl:text-2xl 2xl:text-3xl">
+            <p className="text-(--text-secondary) md:text-(--text-muted) md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl">
               Profesjonalni instruktorzy i najwyższa zdawalność w Poznaniu.
               <br></br>
               Dołącz do 1200+ absolwentów.
             </p>
           </div>
           <div className="hidden md:flex flex-row gap-4 justify-between w-auto">
-            <Link href="" className="w-[10vw] md:w-auto xl:w-[10vw] border border-(--accent) rounded-xl min-h-auto p-3 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-200 text-center">
+            <Link href="" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--accent) rounded-xl min-h-auto p-3 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-200 text-center">
               Zapisz sie online
             </Link>
-            <Link href="" className="w-[10vw] md:w-auto xl:w-[10vw] border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200 text-center">
+            <Link href="" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200 flex justify-center items-center">
               Sprawdz cennik
             </Link>
           </div>
