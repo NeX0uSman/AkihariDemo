@@ -10,7 +10,7 @@ const page = () => {
   return (
     <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-start items-center gap-6 p-8">
       <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2 animate-fadeUpHeader">
-        <DotIcon size={21} weight="bold" color="#EA580C" />
+        <DotIcon size={21} color="#EA580C" />
         <span className="text-(--pill-text) pr-3">CENNIK 2026</span>
       </div>
       <div className="flex flex-col gap-2 justify-center items-center animate-fadeUpHeader">
@@ -77,7 +77,7 @@ const page = () => {
                       className="flex flex-row justify-start items-center gap-2"
                     >
                       <span className="bg-(--accent-dim) p-1 border border-(--border-dim) rounded-xl">
-                        <CheckIcon size={18} weight="light" color="#EA580C" />
+                        <CheckIcon size={18} color="#EA580C" />
                       </span>
                       <span className="text-(--text-secondary)">{feature}</span>
                     </div>
