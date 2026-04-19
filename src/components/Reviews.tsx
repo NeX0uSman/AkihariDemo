@@ -68,7 +68,7 @@ const Reviews = () => {
         </div>
         <Link
           href=""
-          className="bg-background text-(--accent) px-8 py-3 rounded-xl font-bold w-full md:w-auto text-center hover:bg-[#c5c5c5] transition-all duration-200"
+          className="bg-white text-(--accent) px-8 py-3 rounded-xl font-bold w-full md:w-auto text-center hover:bg-[#c5c5c5] transition-all duration-200"
         >
           Zapisz się teraz
         </Link>
