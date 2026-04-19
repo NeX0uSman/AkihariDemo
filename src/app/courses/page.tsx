@@ -98,7 +98,7 @@ const page = () => {
           animationDelay: `0.2s`,
           animationFillMode: "both",
         }}
-        className="animate-fadeUp flex flex-row bg-(--bg-tertiary) w-auto justify-center items-center gap-2 mt-14 p-6 rounded-xl border border-(--border)"
+        className="animate-fadeUp flex flex-row bg-(--bg-tertiary) w-auto justify-center items-center gap-5 md:gap-2 mt-14 p-6 rounded-xl border border-(--border)"
       >
         <NoteIcon
           size={72}
