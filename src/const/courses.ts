@@ -1,12 +1,12 @@
 export const courses = [
   {
     id: 1,
-    priority: true,
     type: "course",
-    name: "Kurs Standardowy",
-    secondaryTitle: "Idealny jeśli nie masz pośpiechu",
-    price: "4000 zł",
-    length: "2 miesiące",
+    priority: false,
+    name: "Kurs Express",
+    secondaryTitle: "Prawo jazdy w 3 tygodnie",
+    price: "6500 zł",
+    length: "16 dni",
     description: "30h teorii + 30h praktyki",
     category: "KATEGORIA B",
     features: [
@@ -18,12 +18,12 @@ export const courses = [
   },
   {
     id: 2,
+    priority: true,
     type: "course",
-    priority: false,
-    name: "Kurs Express",
-    secondaryTitle: "Prawo jazdy w 3 tygodnie",
-    price: "6500 zł",
-    length: "16 dni",
+    name: "Kurs Standardowy",
+    secondaryTitle: "Idealny jeśli nie masz pośpiechu",
+    price: "4000 zł",
+    length: "2 miesiące",
     description: "30h teorii + 30h praktyki",
     category: "KATEGORIA B",
     features: [
