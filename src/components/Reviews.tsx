@@ -67,7 +67,7 @@ const Reviews = () => {
           </p>
         </div>
         <Link
-          href=""
+          href="/enrollment"
           className="bg-white text-(--accent) px-8 py-3 rounded-xl font-bold w-full md:w-auto text-center hover:bg-[#c5c5c5] transition-all duration-200"
         >
           Zapisz się teraz

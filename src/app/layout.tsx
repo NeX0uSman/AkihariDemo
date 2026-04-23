@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Akinari",
-  description: "Najlepsze kerownicy wyszkoleni tu",
+  title: "Akinari — Szkoła Jazdy Poznań",
+  description: "Profesjonalna szkoła jazdy w Poznaniu. Wysoka zdawalność, doświadczeni instruktorzy, kursy kat. B.",
 };
 
 export default function RootLayout({

@@ -132,6 +132,9 @@ body {
     transparent 60%
   );
 }
+.card-priority:hover {
+  border: var(--accent) !important;
+}
 .card-glow:hover {
     border: 1px solid rgba(234, 88, 12, 0.4) !important;
     transform: translateY(-10px);

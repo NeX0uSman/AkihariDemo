@@ -27,10 +27,10 @@ const Hero = () => {
             </p>
           </div>
           <div className="hidden md:flex flex-row gap-4 justify-between w-auto">
-            <Link href="" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--accent) rounded-xl min-h-auto p-3 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-200 text-center">
+            <Link href="/enrollment" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--accent) rounded-xl min-h-auto p-3 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-200 text-center">
               Zapisz sie online
             </Link>
-            <Link href="" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200 flex justify-center items-center">
+            <Link href="/courses" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200 flex justify-center items-center">
               Sprawdz cennik
             </Link>
           </div>
@@ -92,12 +92,12 @@ const Hero = () => {
             <p className="text-(--accent) text-sm md:hidden">
               Zostały 3 ostatnie miejsca
             </p>
-            <Link href="" className="w-full border border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200">
+            <Link href="/enrollment" className="w-full border border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200">
               Zarezerwuj miejsce
             </Link>
             <span className="text-(--text-muted) hidden flex-row justify-center md:flex">lub zadzwoń: +48 61 xxx xxxx</span>
           </div>
-          <Link href="" className="block text-xl min-h-auto p-1.5 w-full border border-(--border) rounded-xl md:hidden hover:bg-(--bg-tertiary) transition-all duration-200">
+          <Link href="/courses" className="block text-xl min-h-auto p-1.5 w-full border border-(--border) rounded-xl md:hidden hover:bg-(--bg-tertiary) transition-all duration-200">
             Sprawdź pełny cennik
           </Link>
         </section>
