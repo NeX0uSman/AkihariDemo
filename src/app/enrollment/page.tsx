@@ -32,19 +32,33 @@ const Page = () => {
     });
     res.status == 200 ? setSubmitted(true) : setError(true);
   };
-  if (submitted) {
-    return <div></div>;
-  } else {
 
+  if (submitted) {
+    return (
+      <div className="animate-fadeUp bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-center items-center gap-4">
+        <div className="text-6xl">🎉</div>
+        <h2 className="text-4xl font-bold">Dziękujemy!</h2>
+        <p className="text-(--text-secondary)">
+          Oddzwonimy do Ciebie w ciągu 24h.
+        </p>
+      </div>
+    );
   }
+
   return (
     <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-start items-center gap-6 p-8">
-      <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2">
+      <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2 animate-fadeUpHeader">
         <DotIcon size={21} color="#EA580C" />
         <span className="text-(--pill-text) pr-3">ZAPISY 2026</span>
       </div>
-      <div className="flex flex-col gap-2 justify-center items-center">
-        <h1 className="text-[clamp(36px,5vw,56px)] font-bold">
+      <div
+        style={{
+          animationDelay: `0.2s`,
+          animationFillMode: "both",
+        }}
+        className="flex flex-col gap-2 justify-center items-center animate-fadeUpHeader"
+      >
+        <h1 className="text-[clamp(36px,5vw,56px)] font-bold xl:font-extrabold">
           Zapisz się na <span className="text-(--accent)">kurs</span>
         </h1>
         <p className="text-(--text-secondary)">
@@ -53,15 +67,22 @@ const Page = () => {
       </div>
 
       <form
+        style={{
+          animationDelay: `0.2s`,
+          animationFillMode: "both",
+        }}
         onSubmit={handleSubmit(onSubmit)}
-        className="bg-(--bg-tertiary) border border-(--border) rounded-2xl p-8 w-full max-w-2xl flex flex-col gap-8"
+        className={`bg-(--bg-tertiary) border border-(--border) rounded-2xl p-8 w-full max-w-2xl flex flex-col gap-8 animate-fadeUp`}
       >
         <div className="flex flex-col gap-4">
           <p className="text-(--text-muted) text-xs uppercase tracking-widest pb-2 border-b border-(--border)">
             DANE OSOBOWE
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div
+            style={{ animationDelay: "0.1s" }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 animation-fadeUp"
+          >
             <div className="flex flex-col gap-2">
               <label htmlFor="">Imie i Nazwisko</label>
               <Input
@@ -110,8 +131,10 @@ const Page = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex flex-col gap-4">
+        <div
+          className="flex flex-col gap-4 animation-fadeUp"
+          style={{ animationDelay: "0.2s" }}
+        >
           <p className="text-(--text-muted) text-xs uppercase tracking-widest pb-2 border-b border-(--border)">
             WYBÓR KURSU
           </p>
@@ -127,7 +150,7 @@ const Page = () => {
                     .map((course) => {
                       return (
                         <Card
-                          className={`cursor-pointer transition-all ${
+                          className={`cursor-pointer transition-all active:scale-95 ${
                             field.value === course.name
                               ? "border border-(--accent) bg-(--accent-dim)"
                               : "border border-(--border)"
@@ -160,9 +183,12 @@ const Page = () => {
           )}
         </div>
 
-        <div className="flex flex-col gap-4">
+        <div
+          className="flex flex-col gap-4animation-fadeUp"
+          style={{ animationDelay: "0.3s" }}
+        >
           <p className="text-(--text-muted) text-xs uppercase tracking-widest pb-2 border-b border-(--border)">
-            TARMIN ZAJĘĆ
+            TERMIN ZAJĘĆ
           </p>
           <div className="flex flex-col gap-3">
             <label className="flex items-center gap-2 text-sm text-(--text-secondary) cursor-pointer">
@@ -206,7 +232,12 @@ const Page = () => {
             )}
           </div>
         </div>
-
+<div className="flex items-center gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
+  <PhoneIcon size={20} color="#EA580C" />
+  <p className="text-sm text-(--text-secondary)">
+    Wolisz zadzwonić? <a href="tel:+4861XXXXXXX" className="text-(--accent) font-bold">+48 61 XXX XXXX</a>
+  </p>
+</div>
         <button
           type="submit"
           className="border cursor-pointer border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200"
@@ -214,17 +245,6 @@ const Page = () => {
           Wyślij zgłoszenie
         </button>
       </form>
-      <div className="rounded-xl bg-(--bg-tertiary) p-3 2xl:p-5 w-auto flex flex-row justify-evenly md:justify-between gap-3 xl:justify-evenly items-center">
-        <PhoneIcon
-          size={64}
-          color="#EA580C"
-          className="p-2 bg-(--accent-bg) border border-(--accent-dim) rounded-xl"
-        />
-        <div className="flex flex-col gap-1 items-center justify-center">
-          <h2 className="text-sm md:text-2xl 2xl:text-4xl text-center">Albo możesz poprostu zadzwonić do nas!</h2>
-          <a href="tel:+4861XXXXXXX" className="text-(--accent) text-md md:text-xl 2xl:text-xl">+4861XXXXXXX</a>
-        </div>
-      </div>
     </div>
   );
 };

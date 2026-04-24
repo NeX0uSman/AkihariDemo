@@ -1,51 +1,110 @@
 "use client";
-import { HexagonIcon, ListIcon } from "@phosphor-icons/react";
+import { CaretLeftIcon, HexagonIcon, ListIcon } from "@phosphor-icons/react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const Header = () => {
-  return (
-    <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
-      <section className="flex gap-2 items-center justify-center">
-        <HexagonIcon size={38} weight="bold" color="#EA580C" />
-        <Link href="/landing" className="text-(--text-primary) font-bold">
-          Akinari
-        </Link>
-      </section>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-      <section className="flex gap-5 items-center md:justify-around ">
-        <Link
-          href="/courses"
-          className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
-        >
-          Kursy
-        </Link>
-        <Link
-          href="/instructors"
-          className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
-        >
-          Instruktorzy
-        </Link>
-        <Link
-          href="/contact"
-          className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
-        >
-          Kontakt
-        </Link>
-        <Link
-          href="/enrollment"
-          className="bg-(--accent) hover:bg-(--accent-hover) transition-colors rounded-md px-3 py-2 font-semibold text-xs text-(--text-primary) cursor-pointer"
-        >
-          Zapisz się
-        </Link>
-        <ListIcon
-          size={28}
-          weight="light"
-          color="#9BA3A6"
-          className="md:hidden"
-        />
-      </section>
-    </header>
+  return (
+    <>
+      <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
+        <section className="flex gap-2 items-center justify-center">
+          <HexagonIcon size={38} weight="bold" color="#EA580C" />
+          <Link href="/landing" className="text-(--text-primary) font-bold">
+            Akinari
+          </Link>
+        </section>
+
+        <section className="flex gap-5 items-center md:justify-around ">
+          <Link
+            href="/courses"
+            className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
+          >
+            Kursy
+          </Link>
+          <Link
+            href="/instructors"
+            className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
+          >
+            Instruktorzy
+          </Link>
+          <Link
+            href="/contact"
+            className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
+          >
+            Kontakt
+          </Link>
+          <Link
+            href="/enrollment"
+            className="bg-(--accent) hover:bg-(--accent-hover) transition-colors rounded-md px-3 py-2 font-semibold text-xs text-(--text-primary) cursor-pointer"
+          >
+            Zapisz się
+          </Link>
+          <ListIcon
+            size={28}
+            weight="light"
+            color="#9BA3A6"
+            className="md:hidden active:scale-95 transition-all duration-200 cursor-pointer"
+            onClick={() => setIsMenuOpen(true)}
+          />
+        </section>
+      </header>
+
+      {isMenuOpen && (
+        <div className="fixed top-0 left-0 w-full h-full bg-(--bg-primary) z-50 flex flex-col items-center justify-start gap-4">
+
+          <div className="w-full flex flex-row justify-start items-start ml-4 mt-4 p-2 cursor-pointer h-[25vh]" onClick={() => setIsMenuOpen(false)}>
+            <CaretLeftIcon
+              size={38}
+              weight="light"
+              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-95 transition-all duration-200"
+            />
+          </div>
+
+          <div className="w-full h-full bg-(--bg-primary) z-50 flex flex-col items-center justify-start gap-4">
+            <div>
+              <HexagonIcon
+                size={38}
+                weight="bold"
+                color="#EA580C"
+                className="animation-fadeUpHeader"
+              />
+            </div>
+            <div className="flex flex-col gap-4"></div>
+
+            <Link
+              href="/courses"
+              className="active:scale-95 p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Kursy
+            </Link>
+            <Link
+              href="/instructors"
+              className="p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Instruktorzy
+            </Link>
+            <Link
+              href="/contact"
+              className="p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Kontakt
+            </Link>
+            <Link
+              href="/enrollment"
+              className="p-2 w-full text-center text-2xl bg-(--accent) text-white hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Zapisz się
+            </Link>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

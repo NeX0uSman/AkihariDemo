@@ -4,9 +4,9 @@ export const schema = z.object({
   imie_nazwisko: z
     .string()
     .min(1, { message: "Proszę wpisać swoje Imie i Nazwisko" }),
-  pesel: z.string().length(11, { message: "Pesel musi mieć 11 znaków" }),
+  pesel: z.number().min(11, { message: "Pesel musi mieć 11 znaków" }).max(11, { message: "Pesel musi mieć 11 znaków" }),
   kurs: z.string().min(1, {message: 'Proszę wybrać kurs'}),
-  telefon: z.string().min(9, { message: "Numer musi mieć 9 znaków" }),
+  telefon: z.number().min(9, { message: "Numer musi mieć 9 znaków" }).max(9, { message: "Numer musi mieć 9 znaków" }),
   poPoludniowy: z.boolean(),
   weekendowy: z.boolean(),
   email: z.email({ message: "Nieprawidłowy email" }),
