@@ -58,7 +58,7 @@ const Page = () => {
         }}
         className="flex flex-col gap-2 justify-center items-center animate-fadeUpHeader"
       >
-        <h1 className="text-[clamp(36px,5vw,56px)] font-bold xl:font-extrabold">
+        <h1 className="text-[clamp(36px,5vw,56px)] font-bold xl:font-extrabold text-center">
           Zapisz się na <span className="text-(--accent)">kurs</span>
         </h1>
         <p className="text-(--text-secondary)">

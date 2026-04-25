@@ -2,10 +2,19 @@
 import { CaretLeftIcon, HexagonIcon, ListIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import React, { useState } from "react";
-
+import logo from "@/assets/akinariLogo.png";
+import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
 
+  const closeMenu = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsClosing(false);
+      setIsMenuOpen(false);
+    }, 250);
+  };
   return (
     <>
       <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
@@ -52,52 +61,55 @@ const Header = () => {
       </header>
 
       {isMenuOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-(--bg-primary) z-50 flex flex-col items-center justify-start gap-4">
-
-          <div className="w-full flex flex-row justify-start items-start ml-4 mt-4 p-2 cursor-pointer h-[25vh]" onClick={() => setIsMenuOpen(false)}>
+        <div
+          className={`${isClosing ? "animate-slideOut" : "animate-fadeIn"} fixed top-0 left-0 w-full h-screen overflow-hidden bg-(--bg-secondary) z-50 flex flex-col items-center justify-start gap-4`}
+        >
+          <div
+            className="cursor-pointer active:scale-85 transition-all duration-200 w-full flex flex-row justify-start items-start ml-4 mt-4 p-2 h-[25vh]"
+            onClick={() => closeMenu()}
+          >
             <CaretLeftIcon
               size={38}
               weight="light"
-              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-95 transition-all duration-200"
+              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border)"
             />
           </div>
 
-          <div className="w-full h-full bg-(--bg-primary) z-50 flex flex-col items-center justify-start gap-4">
+          <div className="w-full h-full z-50 flex flex-col items-center justify-start gap-4">
             <div>
-              <HexagonIcon
-                size={38}
-                weight="bold"
-                color="#EA580C"
-                className="animation-fadeUpHeader"
-              />
+              <Image src={logo} alt="logo"/>
             </div>
             <div className="flex flex-col gap-4"></div>
 
             <Link
               href="/courses"
-              className="active:scale-95 p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
-              onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '0.1s', animationFillMode: "both",}}
+              className="nav-link animate-fadeUp active:scale-95 p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => closeMenu()}
             >
               Kursy
             </Link>
             <Link
               href="/instructors"
-              className="p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
-              onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '0.2s', animationFillMode: "both", }}
+              className="nav-link animate-fadeUp p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => closeMenu()}
             >
               Instruktorzy
             </Link>
             <Link
               href="/contact"
-              className="p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
-              onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '0.3s', animationFillMode: "both", }}
+              className="nav-link animate-fadeUp p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => closeMenu()}
             >
               Kontakt
             </Link>
             <Link
               href="/enrollment"
-              className="p-2 w-full text-center text-2xl bg-(--accent) text-white hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
-              onClick={() => setIsMenuOpen(false)}
+              style={{ animationDelay: '0.4s', animationFillMode: "both", }}
+              className="nav-link animate-fadeUp p-2 w-full text-center text-2xl bg-(--accent) text-white hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => closeMenu()}
             >
               Zapisz się
             </Link>
