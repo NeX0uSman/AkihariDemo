@@ -1,7 +1,7 @@
 import Slawomir from "@/assets/SlawomirInstructor.jpg";
 import Jaroslaw from "@/assets/JaroslawInstructor.jpg";
 import Marek from "@/assets/MarekInstructor.jpg";
-import { Instructor } from "@/types/instructor.type";
+import { Instructor } from "@/types/Instructor.type";
 
 import { Roles } from "@/types/roles.type";
 export const instructors: Instructor[] = [

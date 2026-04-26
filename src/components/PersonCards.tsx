@@ -1,6 +1,6 @@
+'use client'
 import React from "react";
 import { Instructor } from "@/types/instructor.type";
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import Image from "next/image";
 
 interface Props {
@@ -10,10 +10,15 @@ interface Props {
 const PersonCards = ({ instructors }: Props) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl mt-4">
-      {instructors.map((instructor) => (
+      {instructors.map((instructor, index) => (
         <div
-          key={instructor.name}
-          className="card-glow bg-(--bg-tertiary) border border-(--border) rounded-2xl overflow-hidden flex flex-col"
+          key={index}
+          style={{
+            animationDelay: `${0.1 + (index / 10)}s`,
+            animationFillMode: "both",
+          }}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = 'none')}
+          className="card-glow bg-(--bg-tertiary) border border-(--border) rounded-2xl overflow-hidden flex flex-col animate-fadeUp"
         >
           <div className="relative w-full h-64">
             <Image
