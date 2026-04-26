@@ -143,6 +143,7 @@ body {
 .card-glow:hover::before {
   opacity: 1;
 }
+
 /*;Loader animation*/
 .loader {
   width: 48px;

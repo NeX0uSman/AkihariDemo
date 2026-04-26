@@ -5,7 +5,7 @@ export const courses = [
     priority: false,
     name: "Kurs Express",
     secondaryTitle: "Prawo jazdy w 3 tygodnie",
-    price: "6500 zł",
+    price: "5500 zł",
     length: "16 dni",
     description: "30h teorii + 30h praktyki",
     category: "KATEGORIA B",

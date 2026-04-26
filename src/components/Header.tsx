@@ -14,9 +14,9 @@ const Header = () => {
       setIsClosing(false);
       setIsMenuOpen(false);
     }, 250);
-  };
+  }; //refactor in future!
   return (
-    <>
+    <> 
       <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
         <section className="flex gap-2 items-center justify-center">
           <HexagonIcon size={38} weight="bold" color="#EA580C" />
@@ -65,19 +65,19 @@ const Header = () => {
           className={`${isClosing ? "animate-slideOut" : "animate-fadeIn"} fixed top-0 left-0 w-full h-screen overflow-hidden bg-(--bg-secondary) z-50 flex flex-col items-center justify-start gap-4`}
         >
           <div
-            className="cursor-pointer active:scale-85 transition-all duration-200 w-full flex flex-row justify-start items-start ml-4 mt-4 p-2 h-[25vh]"
-            onClick={() => closeMenu()}
+            className="cursor-pointer w-full flex flex-row justify-start items-start ml-4 mt-4 p-2"
           >
             <CaretLeftIcon
               size={38}
               weight="light"
-              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border)"
+              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-85 transition-all duration-200"
+                          onClick={() => closeMenu()}
             />
           </div>
 
           <div className="w-full h-full z-50 flex flex-col items-center justify-start gap-4">
             <div>
-              <Image src={logo} alt="logo"/>
+              <Image src={logo} alt="logo" className="w-[250px] h-[125px] object-contain"/>
             </div>
             <div className="flex flex-col gap-4"></div>
 

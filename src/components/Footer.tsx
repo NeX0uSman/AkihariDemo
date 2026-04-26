@@ -11,7 +11,7 @@ const Footer = () => {
         <p className="md:block hidden text-(--text-muted) text-sm hover:text-white transition-all duration-200 cursor-pointer">
           Regulamin
         </p>
-        <p className="md:block hidden text-(--text-muted)  text-sm hover:text-whitetransition-all duration-200 cursor-pointer">
+        <p className="md:block hidden text-(--text-muted)  text-sm hover:text-white transition-all duration-200 cursor-pointer">
           Polityka prywatności
         </p>
         <p className="text-(--text-muted) text-sm">© 2025 Akinari · Poznań</p>

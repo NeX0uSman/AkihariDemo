@@ -3,12 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { courses } from "@/const/courses";
 import { Button, Field, FieldDescription, FieldLabel } from "@base-ui/react";
-import { DotIcon, Link, PhoneIcon } from "lucide-react";
+import { DotIcon, InfoIcon, Link, PhoneIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { schema } from "@/types/FormData.zod.type";
+import Pill from "@/components/Pill";
 
 type FormData = z.infer<typeof schema>;
 
@@ -47,10 +48,7 @@ const Page = () => {
 
   return (
     <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-start items-center gap-6 p-8">
-      <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2 animate-fadeUpHeader">
-        <DotIcon size={21} color="#EA580C" />
-        <span className="text-(--pill-text) pr-3">ZAPISY 2026</span>
-      </div>
+            <Pill text={'ZAPISY 2026'}/>
       <div
         style={{
           animationDelay: `0.2s`,
@@ -99,9 +97,10 @@ const Page = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="">PESEL</label>
               <Input
+                type="number"
                 className="font-nunito"
                 {...register("pesel")}
-                placeholder="752XXXXXX"
+                placeholder="752XXXXXXXX"
               />
               {errors.pesel && (
                 <p className="text-red-500 text-sm">{errors.pesel.message}</p>
@@ -110,6 +109,7 @@ const Page = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="">Numer telefonu</label>
               <Input
+                type="number"
                 className="font-nunito"
                 {...register("telefon")}
                 placeholder="76XXXXXXX"
@@ -121,6 +121,7 @@ const Page = () => {
             <div className="flex flex-col gap-2">
               <label htmlFor="">Email</label>
               <Input
+                type="email"
                 className="font-nunito"
                 {...register("email")}
                 placeholder="JanNowak@email.com"
@@ -232,12 +233,25 @@ const Page = () => {
             )}
           </div>
         </div>
-<div className="flex items-center gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
-  <PhoneIcon size={20} color="#EA580C" />
-  <p className="text-sm text-(--text-secondary)">
-    Wolisz zadzwonić? <a href="tel:+4861XXXXXXX" className="text-(--accent) font-bold">+48 61 XXX XXXX</a>
-  </p>
-</div>
+        <div className="flex items-center gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
+          <PhoneIcon size={20} color="#EA580C" />
+          <p className="text-sm text-(--text-secondary)">
+            Wolisz zadzwonić?{" "} <br className="block sm:hidden"/>
+            <a href="tel:+4861XXXXXXX" className="text-(--accent) font-bold">
+              +48 61 XXX XXXX
+            </a>
+          </p>
+        </div>
+        <div className="flex items-start gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
+          <span className="text-(--accent) mt-0.5"><InfoIcon size={36} /></span>
+          <p className="text-sm text-(--text-secondary)">
+            <strong className="text-(--text)">
+              PKK nie jest wymagany od razu.
+            </strong>{" "}
+            Możesz zapisać się na kurs i uzyskać Profil Kandydata na Kierowcę
+            podczas trwania zajęć teoretycznych.
+          </p>
+        </div>
         <button
           type="submit"
           className="border cursor-pointer border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200"

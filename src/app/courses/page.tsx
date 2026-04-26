@@ -5,14 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { CheckIcon, DotIcon } from "lucide-react";
 import { NoteIcon } from "@phosphor-icons/react";
+import Pill from "@/components/Pill";
+import Link from "next/link";
 
 const page = () => {
   return (
     <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-start items-center gap-6 p-8">
-      <div className="flex flex-row justify-center items-center bg-(--pill-bg) border border-(--pill-border) rounded-full text-xs md:text-base font-medium px-2 animate-fadeUpHeader">
-        <DotIcon size={21} color="#EA580C" />
-        <span className="text-(--pill-text) pr-3">CENNIK 2026</span>
-      </div>
+      <Pill text="CENNIK 2026" />
       <div className="flex flex-col gap-2 justify-center items-center animate-fadeUpHeader">
         <h1 className="text-[clamp(36px,5vw,56px)] font-extrabold text-center">
           Wybierz swój <span className="text-(--accent)">kurs</span>
@@ -83,11 +82,11 @@ const page = () => {
                     </div>
                   );
                 })}
-                <Button
-                  className={`${course.priority ? "bg-(--accent) " : "bg-(--bg-tertiary) text-(--text-secondary) border-2 border-(--border) hover:bg-(--bg-secondary) "}w-full py-5 font-bold`}
+                <Link href={course.type == "usluga" ? 'tel:61XXXXXXX': '/enrollment'}
+                  className={`${course.priority ? "bg-(--accent) hover:bg-(--accent-hover) " : "bg-(--bg-tertiary) text-(--text-secondary) border-2 border-(--border) hover:bg-(--bg-secondary) "}flex items-center justify-center w-full py-5 font-bold rounded-xl h-9 md:h-8 xs:h-6 transition-all duration-200`}
                 >
-                  Zapisz się
-                </Button>
+                  {course.type == "usluga" ? 'Zadzwoń': 'Zapisz się'}
+                </Link>
               </CardContent>
             </Card>
           );
