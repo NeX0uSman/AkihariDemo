@@ -178,7 +178,7 @@ const page = () => {
               ul. Jackowskiego 22 (MODENA), 61-000 Poznań
             </p>
           </div>
-          <Button className="p-2">Nawiguj →</Button>
+          <Button className="p-2" ><a href="https://maps.app.goo.gl/wwS5nSSYcbjJiE4dA" target="_blank">Nawiguj →</a></Button>
         </div>
       </div>
     </div>

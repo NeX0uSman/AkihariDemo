@@ -4,7 +4,6 @@ import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { cn } from "@/lib/utils";
-import icon from "@/assets/icon.png";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
