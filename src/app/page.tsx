@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Reviews from "@/components/Reviews";
 import WhyUs from "@/components/WhyUs";
 
-const page = () => {
+const Home = () => {
   return (
     <main className="font(--font-nunito)">
       <Hero />
@@ -13,4 +13,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Home;

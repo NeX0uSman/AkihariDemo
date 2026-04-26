@@ -99,7 +99,7 @@ const page = () => {
                       return (
                         <div
                           key={index}
-                          className="flex flex-col p-2 bg-(--bg-secondary) rounded-xl border border-(--border)p-2"
+                          className="flex flex-col p-2 bg-(--bg-secondary) rounded-xl border border-(--border) p-2"
                         >
                           <span className="text-white text-xl">{day.day}:</span>
                           <span className="text-(--accent) font-bold">
@@ -159,7 +159,7 @@ const page = () => {
         })}
       </div>
       <div style={{
-        animationDelay: `${(contactInfo.length + 2) * 0.1}`
+        animationDelay: `${(contactInfo.length + 2) * 0.1}s`
       }} className="rounded-xl card-glow border border-(--border) animate-fadeUpHeader w-full max-w-3xl">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8306277857914!2d16.9001487!3d52.409745799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470444c918891f93%3A0x4cb0834abf7155cd!2sOSK%20AKINARI!5e0!3m2!1sru!2spl!4v1777237117007!5m2!1sru!2spl"
