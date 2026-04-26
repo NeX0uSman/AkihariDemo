@@ -30,7 +30,7 @@ const Hero = () => {
             <Link href="/enrollment" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--accent) rounded-xl min-h-auto p-3 bg-(--accent) hover:bg-(--accent-hover) transition-all duration-200 text-center">
               Zapisz sie online
             </Link>
-            <Link href="/courses" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200 flex justify-center items-center">
+            <Link href="/courses" className="w-[10vw] md:w-auto xl:w-[12vw] 2xl:w-[10vw] flex justify-center items-center border border-(--border) rounded-xl min-h-auto p-3 bg-(--bg-secondary) hover:bg-(--bg-tertiary) transition-all duration-200">
               Sprawdz cennik
             </Link>
           </div>
@@ -97,7 +97,7 @@ const Hero = () => {
             </Link>
             <span className="text-(--text-muted) hidden flex-row justify-center md:flex">lub zadzwoń: +48 61 xxx xxxx</span>
           </div>
-          <Link href="/courses" className="block text-xl min-h-auto p-1.5 w-full border border-(--border) rounded-xl md:hidden hover:bg-(--bg-tertiary) transition-all duration-200">
+          <Link href="/courses" className="text-center block text-xl min-h-auto p-1.5 w-full border border-(--border) rounded-xl md:hidden hover:bg-(--bg-tertiary) transition-all duration-200">
             Sprawdź pełny cennik
           </Link>
         </section>

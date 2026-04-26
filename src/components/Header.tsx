@@ -20,7 +20,7 @@ const Header = () => {
       <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
         <section className="flex gap-2 items-center justify-center">
           <HexagonIcon size={38} weight="bold" color="#EA580C" />
-          <Link href="/landing" className="text-(--text-primary) font-bold">
+          <Link href="/" className="text-(--text-primary) font-bold">
             Akinari
           </Link>
         </section>

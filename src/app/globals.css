@@ -167,7 +167,14 @@ body {
   transform: rotate3d(90, 90, 0, 180deg);
   border-color: #ff3d00;
 }
-
+@keyframes arrowSlide {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-8px);
+  }
+}
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -247,6 +254,7 @@ body {
   }
 }
 @theme {
+  --animate-arrowSlide: arrowSlide 0.2s ease-in-out;
   --animate-fadeUp: fadeUp 0.5s ease-in-out;
   --animate-fadeIn: fadeIn 0.3s ease-in-out;
   --animate-fadeUpHeader: fadeUpHeader 0.8s ease-in-out;

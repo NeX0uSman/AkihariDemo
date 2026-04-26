@@ -1,9 +1,19 @@
-import React from 'react'
+import Link from "next/link";
 
-const notFound = () => {
+const NotFound = () => {
   return (
-    <div>not-found</div>
-  )
-}
+    <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-center items-center gap-4">
+      <p className="text-(--accent) font-bold text-8xl font-[syne]">404</p>
+      <h1 className="text-3xl font-bold">Strona nie istnieje</h1>
+      <p className="text-(--text-secondary)">Wygląda na to, że się zgubiłeś — tak jak przed kursem jazdy.</p>
+      <Link
+        href="/"
+        className="mt-4 px-6 py-3 bg-(--accent) hover:bg-(--accent-hover) transition-colors rounded-xl font-bold text-white"
+      >
+        Wróć na stronę główną
+      </Link>
+    </div>
+  );
+};
 
-export default notFound
+export default NotFound;
