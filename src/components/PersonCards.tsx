@@ -1,6 +1,6 @@
 'use client'
 import React from "react";
-import { Instructor } from "@/types/instructor.type";
+import { Instructor } from "@/types/Instructor.type"
 import Image from "next/image";
 
 interface Props {
