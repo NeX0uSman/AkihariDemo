@@ -13,10 +13,10 @@ const page = () => {
     {
       icon: <PhoneIcon size={36} color="#EA580C" />,
       label: "Telefon",
-      value: "+48 61 XXX XXXX",
+      value: "+48 50 993 0923",
       content: "Pon–Pt: 9:00 – 18:00",
       cta: "Zadzwoń teraz",
-      href: "tel:+4861XXXXXXX",
+      href: "tel:+48 50 993 0923",
     },
 
     {
@@ -25,7 +25,7 @@ const page = () => {
       value: "biuro@akinari.eu",
       content: "Odpowiadamy w ciągu 24h",
       cta: "Napisz do nas",
-      href: "mailto:artemkirpotenko@gmail.com",
+      href: "mailto:biuro@akinari.eu",
     },
 
     {
@@ -158,9 +158,12 @@ const page = () => {
           );
         })}
       </div>
-      <div style={{
-        animationDelay: `${(contactInfo.length + 2) * 0.1}s`
-      }} className="rounded-xl card-glow border border-(--border) animate-fadeUpHeader w-full max-w-3xl">
+      <div
+        style={{
+          animationDelay: `${(contactInfo.length + 2) * 0.1}s`,
+        }}
+        className="rounded-xl card-glow border border-(--border) animate-fadeUpHeader w-full max-w-3xl"
+      >
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2433.8306277857914!2d16.9001487!3d52.409745799999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470444c918891f93%3A0x4cb0834abf7155cd!2sOSK%20AKINARI!5e0!3m2!1sru!2spl!4v1777237117007!5m2!1sru!2spl"
           width="100%"
@@ -169,7 +172,9 @@ const page = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           className="opacity-0 transition-opacity duration-500"
-          onLoad={(e) => e.currentTarget.classList.replace('opacity-0', 'opacity-100')}
+          onLoad={(e) =>
+            e.currentTarget.classList.replace("opacity-0", "opacity-100")
+          }
         ></iframe>
         <div className="flex flex-row justify-between items-center p-5">
           <div className="flex flex-col">
@@ -178,7 +183,11 @@ const page = () => {
               ul. Jackowskiego 22 (MODENA), 61-000 Poznań
             </p>
           </div>
-          <Button className="p-2" ><a href="https://maps.app.goo.gl/wwS5nSSYcbjJiE4dA" target="_blank">Nawiguj →</a></Button>
+          <Button className="p-2">
+            <a href="https://maps.app.goo.gl/wwS5nSSYcbjJiE4dA" target="_blank">
+              Nawiguj →
+            </a>
+          </Button>
         </div>
       </div>
     </div>

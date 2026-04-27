@@ -2,14 +2,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { courses } from "@/const/courses";
-import { Button, Field, FieldDescription, FieldLabel } from "@base-ui/react";
-import { DotIcon, InfoIcon, Link, PhoneIcon } from "lucide-react";
+import { Field, FieldDescription, FieldLabel } from "@base-ui/react";
+import { Button } from "@/components/ui/button";
+import { DotIcon, InfoIcon, PhoneIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import z from "zod";
 import { schema } from "@/types/FormData.zod.type";
 import Pill from "@/components/Pill";
+import { WarningIcon } from "@phosphor-icons/react";
+import Link from "next/link";
 
 type FormData = z.infer<typeof schema>;
 
@@ -26,12 +29,24 @@ const Page = () => {
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
   const onSubmit = async (data: FormData) => {
-    const res = await fetch("https://formspree.io/f/mnjlozel", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
-    res.status == 200 ? setSubmitted(true) : setError(true);
+    try {
+      const res = await fetch("https://formspree.io/f/mnjlozel", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      const result = res.json();
+      console.log("Result: ", result);
+      if (!res.ok) {
+        console.log("Formspree Error: ", result);
+        setError(true);
+        return;
+      }
+      setSubmitted(true);
+    } catch (err) {
+      setError(true);
+      console.log(err);
+    }
   };
 
   if (submitted) {
@@ -42,13 +57,42 @@ const Page = () => {
         <p className="text-(--text-secondary)">
           Oddzwonimy do Ciebie w ciągu 24h.
         </p>
+        <Button className="p-2">
+          <Link href="/">Wróć na stronę główną</Link>
+        </Button>
+      </div>
+    );
+  }
+  
+  if (error) {
+    return (
+      <div className="animate-fadeUp bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-center items-center gap-4 text-center px-4">
+        <WarningIcon
+          size={52}
+          weight="light"
+          className="p-2 bg-(--accent-bg) border border-(--accent-border) rounded-xl"
+          color="#EA580C"
+        />
+
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Wystąpił problem podczas wysyłania formularza
+        </h2>
+
+        <p className="text-(--text-secondary) max-w-md">
+          Nie udało się wysłać wiadomości. Spróbuj ponownie za chwilę lub
+          skontaktuj się z nami telefonicznie.
+        </p>
+
+        <Button className="p-2">
+          <a href="tel:+48 50 993 0923">Zadzwoń teraz</a>
+        </Button>
       </div>
     );
   }
 
   return (
     <div className="bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-start items-center gap-6 p-8">
-            <Pill text={'ZAPISY 2026'}/>
+      <Pill text={"ZAPISY 2026"} />
       <div
         style={{
           animationDelay: `0.2s`,
@@ -236,14 +280,16 @@ const Page = () => {
         <div className="flex items-center gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
           <PhoneIcon size={20} color="#EA580C" />
           <p className="text-sm text-(--text-secondary)">
-            Wolisz zadzwonić?{" "} <br className="block sm:hidden"/>
-            <a href="tel:+4861XXXXXXX" className="text-(--accent) font-bold">
-              +48 61 XXX XXXX
+            Wolisz zadzwonić? <br className="block sm:hidden" />
+            <a href="tel:+48 50 993 0923" className="text-(--accent) font-bold">
+              +48 50 993 0923
             </a>
           </p>
         </div>
         <div className="flex items-start gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
-          <span className="text-(--accent) mt-0.5"><InfoIcon size={36} /></span>
+          <span className="text-(--accent) mt-0.5">
+            <InfoIcon size={36} />
+          </span>
           <p className="text-sm text-(--text-secondary)">
             <strong className="text-(--text)">
               PKK nie jest wymagany od razu.

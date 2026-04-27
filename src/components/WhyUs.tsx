@@ -10,8 +10,8 @@ import React from "react";
 const WhyUs = () => {
   return (
     <section className="flex flex-col items-center gap-5 bg-(--bg-secondary) h-auto py-5 px-6 md:py-24 mx-auto border-b border-t border-(--border)">
-      <div className="w-full h-auto flex flex-col items-center gap-3">
-        <div className="rounded-xl w-full md:w-1/3 h-auto md:text-center border border-(--accent-border) bg-(--pill-bg) p-1 text-(--accent)">
+      <div className="w-full h-auto flex flex-col items-center gap-3 animate-fadeUpHeader">
+        <div className="rounded-xl w-full md:w-1/3 h-auto md:text-center border border-(--accent-border) bg-(--pill-bg) p-1 text-(--accent) transition-transform hover:scale-105 duration-300">
           Dlaczego my
         </div>
 
@@ -21,8 +21,13 @@ const WhyUs = () => {
       </div>
 
       <div className="flex flex-col gap-7 md:flex-wrap md:justify-center xl:flex xl:flex-row xl:flex-nowrap">
-        <div className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70">
-          <div className="p-2 bg-(--pill-bg) rounded-xl shrink-0">
+        {/* Card 1 */}
+        <div 
+          style={{ animationDelay: "0.1s", animationFillMode: "both" }}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = "none")}
+          className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70 card-glow-whyUs animate-fadeUp"
+        >
+          <div className="p-2 bg-(--pill-bg) rounded-xl shrink-0 transition-transform duration-300">
             <ClockIcon size={32} weight="light" color="#EA580C" />
           </div>
 
@@ -34,7 +39,12 @@ const WhyUs = () => {
           </div>
         </div>
 
-        <div className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70">
+        {/* Card 2 */}
+        <div 
+          style={{ animationDelay: "0.2s", animationFillMode: "both" }}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = "none")}
+          className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70 card-glow-whyUs animate-fadeUp"
+        >
           <div className="p-2 bg-(--pill-bg) rounded-xl shrink-0">
             <UserIcon size={32} weight="light" color="#EA580C" />
           </div>
@@ -47,7 +57,12 @@ const WhyUs = () => {
           </div>
         </div>
 
-        <div className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70">
+        {/* Card 3 */}
+        <div 
+          style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = "none")}
+          className="p-4 flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70 card-glow-whyUs animate-fadeUp"
+        >
           <div className="p-2 bg-(--pill-bg) rounded-xl shrink-0">
             <CheckCircleIcon size={32} weight="light" color="#EA580C" />
           </div>
@@ -60,7 +75,12 @@ const WhyUs = () => {
           </div>
         </div>
 
-        <div className="p-4 hidden md:flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70">
+        {/* Card 4 */}
+        <div 
+          style={{ animationDelay: "0.4s", animationFillMode: "both" }}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = "none")}
+          className="p-4 hidden md:flex flex-row items-start md:w-full md:h-auto md:p-8 md:flex-col md:justify-center md:gap-5 gap-2 bg-(--bg-tertiary) rounded-xl border border-(--border) xl:w-1/4 xl:h-70 card-glow-whyUs animate-fadeUp"
+        >
           <div className="p-2 bg-(--pill-bg) rounded-xl shrink-0">
             <DesktopIcon size={32} weight="light" color="#EA580C" />
           </div>

@@ -16,7 +16,7 @@ const Header = () => {
     }, 250);
   }; //refactor in future!
   return (
-    <> 
+    <>
       <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
         <section className="flex gap-2 items-center justify-center">
           <HexagonIcon size={38} weight="bold" color="#EA580C" />
@@ -26,6 +26,12 @@ const Header = () => {
         </section>
 
         <section className="flex gap-5 items-center md:justify-around ">
+          <Link
+            href="/FAQ"
+            className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
+          >
+            Pytania
+          </Link>
           <Link
             href="/courses"
             className="hidden text-md text-(--text-secondary) md:block hover:text-(--text-primary) hover:transition-all duration-200"
@@ -64,26 +70,34 @@ const Header = () => {
         <div
           className={`${isClosing ? "animate-slideOut" : "animate-fadeIn"} fixed top-0 left-0 w-full h-screen overflow-hidden bg-(--bg-secondary) z-50 flex flex-col items-center justify-start gap-4`}
         >
-          <div
-            className="cursor-pointer w-full flex flex-row justify-start items-start ml-4 mt-4 p-2"
-          >
+          <div className="cursor-pointer w-full flex flex-row justify-start items-start ml-4 mt-4 p-2">
             <CaretLeftIcon
               size={38}
               weight="light"
               className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-85 transition-all duration-200"
-                          onClick={() => closeMenu()}
+              onClick={() => closeMenu()}
             />
           </div>
 
           <div className="w-full h-full z-50 flex flex-col items-center justify-start gap-4">
             <div>
-              <Image src={logo} alt="logo" className="w-[250px] h-[125px] object-contain"/>
+              <Image
+                src={logo}
+                alt="logo"
+                className="w-[250px] h-[125px] object-contain"
+              />
             </div>
-            <div className="flex flex-col gap-4"></div>
-
+            <Link
+              href="/FAQ"
+              style={{ animationDelay: "0.1s", animationFillMode: "both" }}
+              className="nav-link animate-fadeUp active:scale-95 p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              onClick={() => closeMenu()}
+            >
+              Pytania
+            </Link>
             <Link
               href="/courses"
-              style={{ animationDelay: '0.1s', animationFillMode: "both",}}
+              style={{ animationDelay: "0.2s", animationFillMode: "both" }}
               className="nav-link animate-fadeUp active:scale-95 p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
               onClick={() => closeMenu()}
             >
@@ -91,7 +105,7 @@ const Header = () => {
             </Link>
             <Link
               href="/instructors"
-              style={{ animationDelay: '0.2s', animationFillMode: "both", }}
+              style={{ animationDelay: "0.3s", animationFillMode: "both" }}
               className="nav-link animate-fadeUp p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
               onClick={() => closeMenu()}
             >
@@ -99,7 +113,7 @@ const Header = () => {
             </Link>
             <Link
               href="/contact"
-              style={{ animationDelay: '0.3s', animationFillMode: "both", }}
+              style={{ animationDelay: "0.4s", animationFillMode: "both" }}
               className="nav-link animate-fadeUp p-2 w-full text-center text-2xl text-(--text-secondary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
               onClick={() => closeMenu()}
             >
@@ -107,7 +121,7 @@ const Header = () => {
             </Link>
             <Link
               href="/enrollment"
-              style={{ animationDelay: '0.4s', animationFillMode: "both", }}
+              style={{ animationDelay: "0.5s", animationFillMode: "both" }}
               className="nav-link animate-fadeUp p-2 w-full text-center text-2xl bg-(--accent) text-white hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
               onClick={() => closeMenu()}
             >
