@@ -15,12 +15,14 @@ export const schema = z
     kurs: z.string().min(1, { message: "Proszę wybrać kurs" }),
     telefon: z
       .string()
-      .min(9, { message: "Numer musi mieć co najmniej 9 cyfr" })
-      .max(15, { message: "Numer jest za długi" })
-      .regex(/^[\d\s+\-()]+$/, { message: "Nieprawidłowy numer telefonu" })
-      .refine((val) => val.replace(/\D/g, "").length >= 9, {
-        message: "Numer musi mieć co najmniej 9 cyfr",
-      }),
+      .transform((val) => val.replace(/\D/g, ""))
+      .refine(
+        (val) =>
+          val.length === 9 || (val.length === 11 && val.startsWith("48")),
+        {
+          message: "Podaj poprawny numer telefonu (9 cyfr)",
+        },
+      ),
     poPoludniowy: z.boolean(),
     weekendowy: z.boolean(),
     email: z.email({ message: "Nieprawidłowy email" }),
