@@ -82,7 +82,7 @@ const page = () => {
                     </div>
                   );
                 })}
-                <Link href={course.type == "usluga" ? 'tel:61XXXXXXX': '/enrollment'}
+                <Link href={course.type == "usluga" ? 'tel:+48 50 993 0923': '/enrollment'}
                   className={`${course.priority ? "bg-(--accent) hover:bg-(--accent-hover) " : "bg-(--bg-tertiary) text-(--text-secondary) border-2 border-(--border) hover:bg-(--bg-secondary) "}flex items-center justify-center w-full py-5 font-bold rounded-xl h-9 md:h-8 xs:h-6 transition-all duration-200`}
                 >
                   {course.type == "usluga" ? 'Zadzwoń': 'Zapisz się'}
