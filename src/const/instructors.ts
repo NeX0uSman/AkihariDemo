@@ -1,6 +1,6 @@
-import Slawomir from "@/assets/SlawomirInstructor.jpg";
-import Jaroslaw from "@/assets/JaroslawInstructor.jpg";
-import Marek from "@/assets/MarekInstructor.jpg";
+import Slawomir from "../../public/SlawomirInstructor.webp";
+import Jaroslaw from "../../public/JaroslawInstructor.webp";
+import Marek from "../../public/MarekInstructor.webp";
 import { Instructor } from "@/types/Instructor.type";
 
 import { Roles } from "@/types/roles.type";

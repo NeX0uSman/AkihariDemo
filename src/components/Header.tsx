@@ -2,7 +2,7 @@
 import { CaretLeftIcon, HexagonIcon, ListIcon } from "@phosphor-icons/react";
 import Link from "next/link";
 import React, { useState } from "react";
-import logo from "@/assets/akinariLogo.png";
+import logo from "../../public/akinariLogo.webp";
 import Image from "next/image";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -84,7 +84,7 @@ const Header = () => {
               <Image
                 src={logo}
                 alt="logo"
-                className="w-[250px] h-[125px] object-contain"
+                className="w-[250px] h-[125px] object-contain animate-fadeUpHeader"
               />
             </div>
             <Link
