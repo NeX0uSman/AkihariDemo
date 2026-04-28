@@ -1,6 +1,6 @@
-'use client'
+"use client";
 import React from "react";
-import { Instructor } from "@/types/Instructor.type"
+import { Instructor } from "@/types/Instructor.type";
 import Image from "next/image";
 
 interface Props {
@@ -14,17 +14,18 @@ const PersonCards = ({ instructors }: Props) => {
         <div
           key={index}
           style={{
-            animationDelay: `${0.1 + (index / 10)}s`,
+            animationDelay: `${0.1 + index / 10}s`,
             animationFillMode: "both",
           }}
-          onAnimationEnd={(e) => (e.currentTarget.style.animation = 'none')}
+          onAnimationEnd={(e) => (e.currentTarget.style.animation = "none")}
           className="card-glow bg-(--bg-tertiary) border border-(--border) rounded-2xl overflow-hidden flex flex-col animate-fadeUp"
         >
-          <div className="relative w-full h-64">
+          <div className="relative w-full h-64 bg-(--bg-secondary)">
             <Image
               src={instructor.photoUrl}
               alt={instructor.name}
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover"
             />
           </div>

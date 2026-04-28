@@ -45,7 +45,7 @@ const Hero = () => {
           </div>
 
           {/* Статистика: Добавлен твой класс card-glow и drop-shadow на цифры */}
-          <div className="flex flex-row bg-(--bg-secondary) justify-around border border-(--border) rounded-2xl w-full card-glow-whyus transition-colors duration-300">
+          <div className="flex flex-row bg-(--bg-secondary) justify-around border border-(--border) rounded-2xl w-full card-glow transition-colors duration-300">
             <section className="flex flex-col items-center justify-center gap-1 p-2 w-1/3">
               <p className="text-(--accent) font-bold text-2xl drop-shadow-[0_0_8px_rgba(234,88,12,0.3)]">94%</p>
               <p className="text-xs text-(--text-secondary) md:text-[10px]">zdawalność</p>
