@@ -70,7 +70,7 @@ const Reviews = () => {
         style={{ animationDelay: `0.5s`, animationFillMode: "both" }}
         className="bg-(--accent) flex flex-col justify-center items-center mt-5 gap-4 p-8 rounded-xl md:flex-row md:justify-between shadow-[0_0_20px_rgba(234,88,12,0.2)] animate-fadeUp"
       >
-        <div className="flex flex-col gap-1 text-white">
+        <div className="flex flex-col gap-1 text-(--text-primary)">
           <p className="font-bold text-xl">Gotowy żeby zacząć?</p>
           <p className="text-sm opacity-90 italic">
             15 maja — ostatnie miejsca na kurs.

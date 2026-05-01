@@ -15,7 +15,7 @@ const FaqChildBlock = ({ question, isActive, onToggle }: Props) => {
       className={`${isActive ? "border border-(--accent-border)" : "border border-(--border)"} rounded-xl overflow-hidden`}
     >
       <p
-        className="flex flex-row justify-between items-center p-4 cursor-pointer text-white font-bold  border-b border-(--border-subtle)"
+        className="flex flex-row justify-between items-center p-4 cursor-pointer text-(--text-primary) font-bold  border-b border-(--border-subtle)"
         onClick={onToggle}
       >
         {question.q}

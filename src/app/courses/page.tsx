@@ -35,7 +35,7 @@ const page = () => {
               <CardHeader className="h-1/4">
                 <div>
                   {course.priority ? (
-                    <span className="self-start text-white bg-(--accent) text-xs font-bold p-1 rounded-xl w-auto">
+                    <span className="self-start text-(--text-primary) bg-(--accent) text-xs font-bold p-1 rounded-xl w-auto">
                       NAJPOPULARNIEJSZY
                     </span>
                   ) : (

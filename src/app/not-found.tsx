@@ -8,7 +8,7 @@ const NotFound = () => {
       <p className="text-(--text-secondary) text-center">Wygląda na to, że się zgubiłeś — tak jak przed kursem jazdy.</p>
       <Link
         href="/"
-        className="mt-4 px-6 py-3 bg-(--accent) hover:bg-(--accent-hover) transition-colors rounded-xl font-bold text-white"
+        className="mt-4 px-6 py-3 bg-(--accent) hover:bg-(--accent-hover) transition-colors rounded-xl font-bold text-(--text-primary)"
       >
         Wróć na stronę główną
       </Link>

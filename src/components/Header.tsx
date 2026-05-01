@@ -1,9 +1,16 @@
 "use client";
-import { CaretLeftIcon, HexagonIcon, ListIcon } from "@phosphor-icons/react";
+import {
+  CaretLeftIcon,
+  HexagonIcon,
+  ListIcon,
+  MoonIcon,
+  SunIcon,
+} from "@phosphor-icons/react";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import logo from "../../public/akinariLogo.webp";
 import Image from "next/image";
+import { Button } from "./ui/button";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
@@ -15,6 +22,13 @@ const Header = () => {
       setIsMenuOpen(false);
     }, 250);
   }; //refactor in future!
+  const [isDark, setIsDark] = useState(false);
+
+  const themeChange = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle("light");
+  };
+
   return (
     <>
       <header className="flex w-full h-15 text-sm justify-between items-center border-b border-(--border) p-2 font-[syne] bg-(--bg-tertiary) md:justify-around">
@@ -63,6 +77,13 @@ const Header = () => {
             className="md:hidden active:scale-95 transition-all duration-200 cursor-pointer"
             onClick={() => setIsMenuOpen(true)}
           />
+          <Button className="hidden md:block" onClick={() => themeChange()}>
+            {isDark ? (
+              <MoonIcon size={52} weight="light" />
+            ) : (
+              <SunIcon size={52} weight="light" />
+            )}
+          </Button>
         </section>
       </header>
 
@@ -70,13 +91,29 @@ const Header = () => {
         <div
           className={`${isClosing ? "animate-slideOut" : "animate-fadeIn"} fixed top-0 left-0 w-full h-screen overflow-hidden bg-(--bg-secondary) z-50 flex flex-col items-center justify-start gap-4`}
         >
-          <div className="cursor-pointer w-full flex flex-row justify-start items-start ml-4 mt-4 p-2">
+          <div className="cursor-pointer w-full flex flex-row justify-between items-start p-2">
             <CaretLeftIcon
               size={38}
               weight="light"
-              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-85 transition-all duration-200"
+              className="p-2 bg-(--bg-secondary)  rounded-xl border border-(--border) active:scale-85 transition-all duration-200 ml-4 mt-4"
               onClick={() => closeMenu()}
             />
+            <Button
+              className="block p-2 bg-(--bg-secondary) rounded-xl border border-(--border) active:scale-85 transition-all duration-200 mr-4 mt-4"
+              onClick={() => themeChange()}
+            >
+              {isDark ? (
+                <MoonIcon
+                  size={52}
+                  weight="light"
+                  color={
+                    isDark ? "text-(--text-primary)" : "text-(--text-primary)"
+                  }
+                />
+              ) : (
+                <SunIcon size={52} weight="light" />
+              )}
+            </Button>
           </div>
 
           <div className="w-full h-full z-50 flex flex-col items-center justify-start gap-4">
@@ -122,7 +159,7 @@ const Header = () => {
             <Link
               href="/enrollment"
               style={{ animationDelay: "0.5s", animationFillMode: "both" }}
-              className="nav-link animate-fadeUp p-2 w-full text-center text-2xl bg-(--accent) text-white hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
+              className="nav-link animate-fadeUp p-2 w-full text-center text-2xl bg-(--accent) text-(--text-primary) hover:text-(--text-primary) hover:transition-all duration-200 border-b border-t border-(--border)"
               onClick={() => closeMenu()}
             >
               Zapisz się

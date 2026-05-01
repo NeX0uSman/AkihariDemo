@@ -101,7 +101,7 @@ const page = () => {
                           key={index}
                           className="flex flex-col p-2 bg-(--bg-secondary) rounded-xl border border-(--border) p-2"
                         >
-                          <span className="text-white text-xl">{day.day}:</span>
+                          <span className="text-(--text-primary) text-xl">{day.day}:</span>
                           <span className="text-(--accent) font-bold">
                             {" "}
                             {day.from} – {day.to}
@@ -119,7 +119,7 @@ const page = () => {
                           key={index}
                           className="flex flex-col p-2 bg-(--bg-secondary) rounded-xl border border-(--border) w-auto"
                         >
-                          <span className="text-white text-xl">{day.name}</span>
+                          <span className="text-(--text-primary) text-xl">{day.name}</span>
                           <div>
                             <span className="text-(--text-secondary)">
                               {day.day}:{" "}
@@ -178,7 +178,7 @@ const page = () => {
         ></iframe>
         <div className="flex flex-row justify-between items-center p-5">
           <div className="flex flex-col">
-            <p className="font-bold text-md text-white">OSK Akinari</p>
+            <p className="font-bold text-md text-(--text-primary)">OSK Akinari</p>
             <p className="text-(--text-muted)">
               ul. Jackowskiego 22 (MODENA), 61-000 Poznań
             </p>

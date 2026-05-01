@@ -10,10 +10,6 @@ export const faqCategories: Category[] = [
         a: "Wypełnij formularz na stronie lub zadzwoń do nas. Przed rozpoczęciem kursu musisz uzyskać Profil Kandydata na Kierowcę (PKK) w Wydziale Komunikacji.",
       },
       {
-        q: "Czy muszę mieć PKK przed zapisem?",
-        a: "Nie — możesz zapisać się na kurs i uzyskać PKK w trakcie zajęć teoretycznych. Nasz zespół pomoże Ci przez cały proces.",
-      },
-      {
         q: "Czy można płacić w ratach?",
         a: "Tak, oferujemy płatność w nieoprocentowanych ratach bez prowizji na czas trwania kursu.",
       },

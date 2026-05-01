@@ -286,18 +286,6 @@ const Page = () => {
             </a>
           </p>
         </div>
-        <div className="flex items-start gap-3 bg-(--accent-bg) border border-(--accent-border) rounded-xl p-4">
-          <span className="text-(--accent) mt-0.5">
-            <InfoIcon size={36} />
-          </span>
-          <p className="text-sm text-(--text-secondary)">
-            <strong className="text-(--text)">
-              PKK nie jest wymagany od razu.
-            </strong>{" "}
-            Możesz zapisać się na kurs i uzyskać Profil Kandydata na Kierowcę
-            podczas trwania zajęć teoretycznych.
-          </p>
-        </div>
         <button
           type="submit"
           className="border cursor-pointer border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200"
