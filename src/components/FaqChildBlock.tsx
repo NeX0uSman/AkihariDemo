@@ -23,7 +23,7 @@ const FaqChildBlock = ({ question, isActive, onToggle }: Props) => {
           size={21}
           weight="light"
           className={`transition-transform duration-200 ${isActive ? "rotate-180" : ""}`}
-          color={`${isActive ? "#EA580C" : "#FFFFFF"}`}
+          color={`${isActive ? "#EA580C" : "var(--text-primary)"}`}
         />
       </p>
       <div
