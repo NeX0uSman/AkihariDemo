@@ -2,9 +2,8 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { courses } from "@/const/courses";
-import { Field, FieldDescription, FieldLabel } from "@base-ui/react";
 import { Button } from "@/components/ui/button";
-import { DotIcon, InfoIcon, PhoneIcon } from "lucide-react";
+import { PhoneIcon } from "lucide-react";
 import React, { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -63,7 +62,7 @@ const Page = () => {
       </div>
     );
   }
-  
+
   if (error) {
     return (
       <div className="animate-fadeUp bg-(--bg-secondary) w-full min-h-screen flex flex-col justify-center items-center gap-4 text-center px-4">
@@ -126,7 +125,7 @@ const Page = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-6 animation-fadeUp"
           >
             <div className="flex flex-col gap-2">
-              <label htmlFor="">Imie i Nazwisko</label>
+              <label htmlFor="">Imie i Nazwisko <span className="text-(--text-secondary)">*</span></label>
               <Input
                 className="font-nunito"
                 {...register("imie_nazwisko")}
@@ -139,7 +138,7 @@ const Page = () => {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="">PESEL</label>
+              <label htmlFor="">PESEL <span className="text-(--text-secondary)">*</span></label>
               <Input
                 type="number"
                 className="font-nunito"
@@ -151,7 +150,7 @@ const Page = () => {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="">Numer telefonu</label>
+              <label htmlFor="">Numer telefonu <span className="text-(--text-secondary)">*</span></label>
               <Input
                 type="number"
                 className="font-nunito"
@@ -163,7 +162,7 @@ const Page = () => {
               )}
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="">Email</label>
+              <label htmlFor="">Email <span className="text-(--text-secondary)">*</span></label>
               <Input
                 type="email"
                 className="font-nunito"
@@ -181,7 +180,7 @@ const Page = () => {
           style={{ animationDelay: "0.2s" }}
         >
           <p className="text-(--text-muted) text-xs uppercase tracking-widest pb-2 border-b border-(--border)">
-            WYBÓR KURSU
+            WYBÓR KURSU <span className="text-(--text-secondary)">*</span>
           </p>
           <Controller
             name="kurs"
@@ -229,11 +228,11 @@ const Page = () => {
         </div>
 
         <div
-          className="flex flex-col gap-4animation-fadeUp"
+          className="flex flex-col gap-4 animation-fadeUp"
           style={{ animationDelay: "0.3s" }}
         >
           <p className="text-(--text-muted) text-xs uppercase tracking-widest pb-2 border-b border-(--border)">
-            TERMIN ZAJĘĆ
+            TERMIN ZAJĘĆ <span className="text-(--text-secondary)">*</span>
           </p>
           <div className="flex flex-col gap-3">
             <label className="flex items-center gap-2 text-sm text-(--text-secondary) cursor-pointer">
@@ -286,12 +285,44 @@ const Page = () => {
             </a>
           </p>
         </div>
+        <div className="flex items-start gap-3">
+          <input
+            type="checkbox"
+            {...register("zgoda")}
+            className="w-4 h-4 mt-1 accent-orange-500"
+          />
+          <p className="text-sm text-(--text-secondary)">
+            Wyrażam zgodę na przetwarzanie moich danych osobowych zgodnie z{" "}
+            <a
+              rel="noopener noreferrer"
+              href="/politykaPrywatnosci.pdf"
+              target="_blank"
+              className="text-(--accent) hover:underline"
+            >
+              Polityką prywatności
+            </a>{" "}
+            oraz akceptuję{" "}
+            <a
+              rel="noopener noreferrer"
+              href="/regulamin.pdf"
+              target="_blank"
+              className="text-(--accent) hover:underline"
+            >
+              Regulamin
+            </a>
+            . *
+          </p>
+        </div>
+        {errors.zgoda && (
+          <p className="text-red-500 text-sm">{errors.zgoda.message}</p>
+        )}
         <button
           type="submit"
           className="border cursor-pointer border-(--border) rounded-xl min-h-auto p-2 bg-(--accent) text-center hover:bg-(--accent-hover) transition-all duration-200"
         >
           Wyślij zgłoszenie
         </button>
+        <p className="text-(--text-secondary) text-sm">* - Dane obowiązkowe do uzupelnienia</p>
       </form>
     </div>
   );

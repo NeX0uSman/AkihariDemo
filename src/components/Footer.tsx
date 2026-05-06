@@ -81,8 +81,8 @@ const Footer = () => {
       <div className="border-t border-(--border) px-8 py-4 max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
         <p className="text-xs text-(--text-muted)">© 2026 <span className="text-(--accent)">Akinari</span> · Wszelkie prawa zastrzeżone</p>
         <div className="flex gap-4">
-          <Link download href="regulamin.txt" className="text-xs text-(--text-muted) hover:text-(--text-secondary) transition-colors">Regulamin</Link>
-          <Link download href="politykaprywatnosci.txt" className="text-xs text-(--text-muted) hover:text-(--text-secondary) transition-colors">Polityka prywatności</Link>
+          <Link rel="noopener noreferrer" target="_blank" href="/regulamin.pdf" className="text-xs text-(--text-muted) hover:text-(--text-secondary) transition-colors">Regulamin</Link>
+          <Link rel="noopener noreferrer" target="_blank" href="/politykaPrywatnosci.pdf" className="text-xs text-(--text-muted) hover:text-(--text-secondary) transition-colors">Polityka prywatności</Link>
         </div>
       </div>
     </footer>

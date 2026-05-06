@@ -26,6 +26,7 @@ export const schema = z
     poPoludniowy: z.boolean(),
     weekendowy: z.boolean(),
     email: z.email({ message: "Nieprawidłowy email" }),
+    zgoda: z.literal(true, { message: "Wymagana zgoda na przetwarzanie danych" }),
     uwagi: z
       .string()
       .max(255, {

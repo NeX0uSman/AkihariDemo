@@ -7,7 +7,7 @@ import {
   SunIcon,
 } from "@phosphor-icons/react";
 import Link from "next/link";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useState } from "react";
 import logo from "../../public/akinariLogo.webp";
 import Image from "next/image";
 import { Button } from "./ui/button";

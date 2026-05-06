@@ -2,8 +2,7 @@
 import React from "react";
 import { courses } from "../../const/courses";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { CheckIcon, DotIcon } from "lucide-react";
+import { CheckIcon } from "lucide-react";
 import { NoteIcon } from "@phosphor-icons/react";
 import Pill from "@/components/Pill";
 import Link from "next/link";
